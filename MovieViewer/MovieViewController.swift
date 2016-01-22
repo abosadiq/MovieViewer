@@ -9,16 +9,16 @@
 import UIKit
 import AFNetworking
 
-class MovieViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class MovieViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate,UISearchDisplayDelegate{
 
     @IBOutlet weak var tableView: UITableView!
-    
+    var refrechController = UIRefreshControl()
     var movies: [NSDictionary]?
     override func viewDidLoad() {
         super.viewDidLoad()
+        //var tableView = tableView
           tableView.dataSource = self
-          tableView.delegate = self
-        
+          tableView.delegate = self 
         let apiKey = "a07e22bc18f5cb106bfe4cc1f83ad8ed"
         let url = NSURL(string:"https://api.themoviedb.org/3/movie/now_playing?api_key=\(apiKey)")
         let request = NSURLRequest(URL: url!)
@@ -51,6 +51,11 @@ class MovieViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         // Do any additional setup after loading the view.
         
+    }
+    
+    @IBAction func onTap(sender: AnyObject) {
+        view.endEditing(true)
+
     }
 
     override func didReceiveMemoryWarning() {

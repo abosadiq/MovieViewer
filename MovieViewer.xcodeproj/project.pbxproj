@@ -45,6 +45,7 @@
 		9B4802741C4B763600A9FDEB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9B998F451C40EB04009BB054 /* Products */,
 				9B4802751C4B76C200A9FDEB /* MovieCell.swift */,
 			);
 			name = Views;
@@ -62,7 +63,6 @@
 			isa = PBXGroup;
 			children = (
 				9B998F461C40EB04009BB054 /* MovieViewer */,
-				9B998F451C40EB04009BB054 /* Products */,
 				9FDA58D0B63FB2732ECF1B28 /* Pods */,
 				F424B05B05D000A0F8565CCE /* Frameworks */,
 			);
@@ -74,6 +74,7 @@
 				9B998F441C40EB04009BB054 /* MovieViewer.app */,
 			);
 			name = Products;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		9B998F461C40EB04009BB054 /* MovieViewer */ = {
