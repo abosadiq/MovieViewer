@@ -11,8 +11,8 @@
 		9B998F481C40EB04009BB054 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B998F471C40EB04009BB054 /* AppDelegate.swift */; };
 		9B998F4D1C40EB04009BB054 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B998F4B1C40EB04009BB054 /* Main.storyboard */; };
 		9B998F4F1C40EB04009BB054 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B998F4E1C40EB04009BB054 /* Assets.xcassets */; };
-		9B998F521C40EB04009BB054 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B998F501C40EB04009BB054 /* LaunchScreen.storyboard */; };
 		9B998F5A1C40EB8F009BB054 /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B998F591C40EB8F009BB054 /* MovieViewController.swift */; };
+		9BAB08841C55E66F0072803D /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BAB08831C55E66F0072803D /* Launch Screen.storyboard */; };
 		AE6491678B4103C2102B35A3 /* Pods_MovieViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80C167B97326790F1EBAB125 /* Pods_MovieViewer.framework */; };
 /* End PBXBuildFile section */
 
@@ -24,9 +24,9 @@
 		9B998F471C40EB04009BB054 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B998F4C1C40EB04009BB054 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9B998F4E1C40EB04009BB054 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		9B998F511C40EB04009BB054 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B998F531C40EB04009BB054 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B998F591C40EB8F009BB054 /* MovieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
+		9BAB08831C55E66F0072803D /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = "Launch Screen.storyboard"; path = "../Launch Screen.storyboard"; sourceTree = "<group>"; };
 		AA46F60B8FBF70E1870BA34E /* Pods-MovieViewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieViewer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MovieViewer/Pods-MovieViewer.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,7 +85,7 @@
 				9B998F471C40EB04009BB054 /* AppDelegate.swift */,
 				9B998F4B1C40EB04009BB054 /* Main.storyboard */,
 				9B998F4E1C40EB04009BB054 /* Assets.xcassets */,
-				9B998F501C40EB04009BB054 /* LaunchScreen.storyboard */,
+				9BAB08831C55E66F0072803D /* Launch Screen.storyboard */,
 				9B998F531C40EB04009BB054 /* Info.plist */,
 			);
 			path = MovieViewer;
@@ -170,7 +170,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B998F521C40EB04009BB054 /* LaunchScreen.storyboard in Resources */,
+				9BAB08841C55E66F0072803D /* Launch Screen.storyboard in Resources */,
 				9B998F4F1C40EB04009BB054 /* Assets.xcassets in Resources */,
 				9B998F4D1C40EB04009BB054 /* Main.storyboard in Resources */,
 			);
@@ -246,14 +246,6 @@
 				9B998F4C1C40EB04009BB054 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		9B998F501C40EB04009BB054 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9B998F511C40EB04009BB054 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
