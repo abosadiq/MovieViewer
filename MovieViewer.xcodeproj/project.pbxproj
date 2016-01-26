@@ -11,8 +11,8 @@
 		9B998F481C40EB04009BB054 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B998F471C40EB04009BB054 /* AppDelegate.swift */; };
 		9B998F4D1C40EB04009BB054 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B998F4B1C40EB04009BB054 /* Main.storyboard */; };
 		9B998F4F1C40EB04009BB054 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B998F4E1C40EB04009BB054 /* Assets.xcassets */; };
-		9B998F5A1C40EB8F009BB054 /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B998F591C40EB8F009BB054 /* MovieViewController.swift */; };
 		9BAB08841C55E66F0072803D /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BAB08831C55E66F0072803D /* Launch Screen.storyboard */; };
+		9BAB088A1C5600900072803D /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAB08891C5600900072803D /* DetailTableViewController.swift */; };
 		AE6491678B4103C2102B35A3 /* Pods_MovieViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80C167B97326790F1EBAB125 /* Pods_MovieViewer.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +27,7 @@
 		9B998F531C40EB04009BB054 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B998F591C40EB8F009BB054 /* MovieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
 		9BAB08831C55E66F0072803D /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = "Launch Screen.storyboard"; path = "../Launch Screen.storyboard"; sourceTree = "<group>"; };
+		9BAB08891C5600900072803D /* DetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
 		AA46F60B8FBF70E1870BA34E /* Pods-MovieViewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieViewer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MovieViewer/Pods-MovieViewer.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -55,6 +56,7 @@
 			isa = PBXGroup;
 			children = (
 				9B998F591C40EB8F009BB054 /* MovieViewController.swift */,
+				9BAB08891C5600900072803D /* DetailTableViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -231,8 +233,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BAB088A1C5600900072803D /* DetailTableViewController.swift in Sources */,
 				9B998F481C40EB04009BB054 /* AppDelegate.swift in Sources */,
-				9B998F5A1C40EB8F009BB054 /* MovieViewController.swift in Sources */,
 				9B4802761C4B76C200A9FDEB /* MovieCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
