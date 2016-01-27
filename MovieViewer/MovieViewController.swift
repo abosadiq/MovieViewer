@@ -27,7 +27,7 @@ UISearchBarDelegate{
        refrechController.backgroundColor = UIColor.grayColor()
         refrechController.tintColor = UIColor.blueColor()
         refrechController.addTarget(self, action: "refreshControlAction:", forControlEvents: UIControlEvents.ValueChanged)
-        tableView.insertSubview(refrechController, atIndex: 0)
+        tableView.insertSubview(refrechController, atIndex: 3)
        searchBar.delegate = self
         filteredData = movies
         var getView: UIView {
@@ -74,13 +74,7 @@ UISearchBarDelegate{
     }
     
     
-    @IBAction func onTap(sender: AnyObject) {
-        view.endEditing(true)
-
-    }
-
-    
-    
+   
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -104,16 +98,19 @@ UISearchBarDelegate{
         let movie = filteredData![indexPath.row]
         let title = movie ["title"] as! String
         let overview = movie ["overview"] as! String
-        let posterpath = movie ["poster_path"] as! String
-        let baseUrl = "http://image.tmdb.org/t/p/w500"
-        let imageUrl = NSURL(string: baseUrl + posterpath)
-        
         
         cell.titleLabel.text = title
         cell.overViewLabel.text = overview
+         let baseUrl = "http://image.tmdb.org/t/p/w500"
+        if let posterpath = movie ["poster_path"] as? String {
+    
+        let imageUrl = NSURL(string: baseUrl + posterpath)
+        
         cell.posterView.setImageWithURL(imageUrl!)
-        print("(indexPath.row)")
-        return cell
+            
+        }
+         return cell
+        
         }
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
         filteredData = searchText.isEmpty ? movies : movies!.filter({ (movie: NSDictionary) -> Bool in
@@ -150,14 +147,25 @@ UISearchBarDelegate{
         task.resume()
     }
     
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let cell = sender as! UITableViewCell
+        let indexPath = tableView.indexPathForCell(cell)
+        let movie = movies![indexPath!.row]
+        let detailViewContoroller = segue.destinationViewController as! DetailViewController
+        detailViewContoroller.movie = movie
+        //print("wafi")
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
-
-}
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        print("did select row")
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+         view.endEditing(true)
+    }
+    
+  }
