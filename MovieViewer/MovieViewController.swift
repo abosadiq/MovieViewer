@@ -20,8 +20,13 @@ UISearchBarDelegate{
     var refrechController = UIRefreshControl()
     var movies: [NSDictionary]?
     var filteredData: [NSDictionary]!
+    var endpoint: String!
+    
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 //           let refreshControl = UIRefreshControl()
 //        refreshControl.addTarget(self, action: "refreshControlAction:", forControlEvents: UIControlEvents.ValueChanged)
        refrechController.backgroundColor = UIColor.grayColor()
@@ -37,7 +42,7 @@ UISearchBarDelegate{
           tableView.dataSource = self
           tableView.delegate = self 
         let apiKey = "a07e22bc18f5cb106bfe4cc1f83ad8ed"
-        let url = NSURL(string:"https://api.themoviedb.org/3/movie/now_playing?api_key=\(apiKey)")
+        let url = NSURL(string:"https://api.themoviedb.org/3/movie/\(endpoint)?api_key=\(apiKey)")
         let request = NSURLRequest(URL: url!)
         let session = NSURLSession(
             configuration: NSURLSessionConfiguration.defaultSessionConfiguration(),
@@ -50,7 +55,7 @@ UISearchBarDelegate{
                 if let data = dataOrNil {
                     if let responseDictionary = try! NSJSONSerialization.JSONObjectWithData(
                         data, options:[]) as? NSDictionary {
-                            print("response: \(responseDictionary)")
+//                            print("response: \(responseDictionary)")
                             
                             self.movies = responseDictionary["results"] as? [NSDictionary]
                             self.filteredData = self.movies
@@ -154,18 +159,38 @@ UISearchBarDelegate{
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let cell = sender as! UITableViewCell
         let indexPath = tableView.indexPathForCell(cell)
-        let movie = movies![indexPath!.row]
+        let movie = filteredData![indexPath!.row]
         let detailViewContoroller = segue.destinationViewController as! DetailViewController
         detailViewContoroller.movie = movie
         //print("wafi")
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
+    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
+        UIView.animateWithDuration(0, animations: {
+            self.searchBar.setShowsCancelButton(true, animated: true)
+            
+        })
+    }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print("did select row")
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-         view.endEditing(true)
+        view.endEditing(true)
     }
     
-  }
+    func refershFilteredData() {
+        tableView.reloadData()
+        //collectionView.reloadData()
+    }
+    
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        (filteredData, searchBar.text) = (movies, "")
+        self.searchBar.setShowsCancelButton(false, animated: true)
+        refershFilteredData()
+        searchBar.resignFirstResponder()
+    }
+    
+    
+    
+}
