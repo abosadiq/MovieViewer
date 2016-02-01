@@ -53,7 +53,7 @@ Describe any challenges encountered while building the app.
 
 **MovieViewer** is a movies app displaying box office and top rental DVDs using [The Movie Database API](http://docs.themoviedb.apiary.io/#).
 
-Time spent: **1** hours spent in total
+Time spent: **4** hours spent in total
 
 ## User Stories
 
@@ -80,7 +80,9 @@ Please list two areas of the assignment you'd like to **discuss further with you
 ## Video Walkthrough 
 
 Here's a walkthrough of implemented user stories:
+
 ![Walkthrough](walkthrough_2.gif)
+
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
@@ -89,7 +91,7 @@ Describe any challenges encountered while building the app.
 
 ## License
 
-Copyright  Copyright [2016] [Wafi Mohamed]
+Copyright [2016] [Wafi Mohamed]
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

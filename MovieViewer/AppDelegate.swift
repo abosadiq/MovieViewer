@@ -32,6 +32,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
        topRatedNavigationController.tabBarItem.image = UIImage(named: "top_rated")
         
         topRatedNavigationController.tabBarItem.title = "Top Rated"
+    
+
         
         let tapBar = UITabBarController()
         let popularNavigationController = storyboard.instantiateViewControllerWithIdentifier("MoivesNavigationContoroll") as! UINavigationController
@@ -46,7 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         upComingViewCotroller.endpoint = "upcoming"
         upComingNavigationController.tabBarItem.image = UIImage(named: "up_coming")
         upComingNavigationController.tabBarItem.title = "Up Coming"
-        
+         //upComingNavigationController.view.backgroundColor = UIColor.redColor()
         
 //        let latestNavigationController = storyboard.instantiateViewControllerWithIdentifier("MoivesNavigationContoroll") as! UINavigationController
 //        let latestViewCotroller = latestNavigationController.topViewController as! MovieViewController
@@ -56,10 +58,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
 //
         
         tapBar.viewControllers = [nowPlayingNavigationController,topRatedNavigationController,popularNavigationController,upComingNavigationController]
-        tapBar.tabBar.tintColor = UIColor(red: 200/430, green: 300/200, blue: 130/220, alpha: 1)
-        tapBar.tabBar.barTintColor = UIColor.blackColor()
-       tapBar.tabBar.translucent = true
-        
+        tapBar.tabBar.tintColor = UIColor.whiteColor()
+        tapBar.tabBar.barTintColor =  UIColor(
+            red: 0.1,
+            green: 28/155.0,
+            blue: 4,
+            alpha: 1.0)
+    
+
         
         window?.rootViewController = tapBar
         window?.makeKeyAndVisible()

@@ -38,6 +38,26 @@ UISearchBarDelegate{
         var getView: UIView {
             return self.view
         }
+       switch  tabBarController?.selectedIndex
+       {
+        case 0?:
+        navigationItem.title = "Now Playing"
+        
+        case 1?:
+        navigationItem.title = "Top Rated"
+      
+       case 2?:
+        navigationItem.title = "Popular"
+        
+       case 3?:
+        navigationItem.title = "Up Coming"
+        default: break
+        }
+        
+        
+                    
+        
+        
         //var tableView = tableView
           tableView.dataSource = self
           tableView.delegate = self 
@@ -68,10 +88,7 @@ UISearchBarDelegate{
         });
         task.resume()
         
-        
-        
-        
-        
+    
         
         
         // Do any additional setup after loading the view.
